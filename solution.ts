@@ -36,7 +36,6 @@ class Person {
     }
 }
 
-
 interface RatedItem {
   title: string;
   rating: number;
@@ -56,7 +55,6 @@ interface User {
 function filterActiveUsers(users: User[]): User[] {
     return users.filter(user => user.isActive === true);
 }
-
 
 interface Book {
   title: string;
@@ -89,7 +87,6 @@ function getUniqueValues(array1: (string | number)[], array2: (string | number)[
 
   return result;
 }
-
 
 interface Product {
   name: string;
