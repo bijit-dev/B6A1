@@ -35,3 +35,15 @@ class Person {
         return `'Name: ${this.name}, Age: ${this.age}'`;
     }
 }
+
+
+interface RatedItem {
+  title: string;
+  rating: number;
+}
+
+function filterByRating(items: RatedItem[]): RatedItem[] {
+  return items.filter((item) => item.rating >= 4);
+}
+
+
