@@ -56,3 +56,16 @@ interface User {
 function filterActiveUsers(users: User[]): User[] {
     return users.filter(user => user.isActive === true);
 }
+
+
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+  isAvailable: boolean;
+}
+
+function printBookDetails(book: Book): string {
+  const availability = book.isAvailable ? "Yes" : "No";
+  return `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availability}`;
+}
