@@ -62,4 +62,4 @@ function getProperty<T, K extends keyof T>(obj: T, key: K) {
 }
 
 const user: User = { id: 1, name: 'Rakib', email: 'rakib@example.com' };
-const userName = getProperty(user, 'name'); // 'Rakib'
+const userName = getProperty(user, 'name'); 
