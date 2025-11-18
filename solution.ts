@@ -69,3 +69,25 @@ function printBookDetails(book: Book): string {
   const availability = book.isAvailable ? "Yes" : "No";
   return `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availability}`;
 }
+
+function getUniqueValues(array1: (string | number)[], array2: (string | number)[]): (string | number)[] {
+  const result: (string | number)[] = [];
+
+  const pushIfNotExists = (value: string | number) => {
+    let exists = false;
+    for (const item of result) {
+      if (item === value) {
+        exists = true;
+        break;
+      }
+    }
+    if (!exists) result.push(value);
+  };
+
+  for (const v of array1) pushIfNotExists(v);
+  for (const v of array2) pushIfNotExists(v);
+
+  return result;
+}
+
+
