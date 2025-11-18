@@ -91,3 +91,24 @@ function getUniqueValues(array1: (string | number)[], array2: (string | number)[
 }
 
 
+interface Product {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+}
+
+function calculateTotalPrice(products: Product[]): number {
+  if (products.length === 0) return 0;
+
+  return products
+    .map((product) => {
+      const base = product.price * product.quantity;
+      if (product.discount) {
+        const discounted = base - (base * product.discount) / 100;
+        return discounted;
+      }
+      return base;
+    })
+    .reduce((sum, current) => sum + current, 0);
+}
